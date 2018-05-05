@@ -95,7 +95,7 @@ def load_melgram(file_path):
         melgram = np.flip(melgram, 0)     # we save images 'rightside up' but librosa internally presents them 'upside down'
     else:
         print("load_melgram: Error: unrecognized file extension '",extension,"' for file ",file_path,sep="")
-    return melgram
+    return reduced
 
 
 def get_sample_dimensions(class_names, path='Preproc/Train/'):
