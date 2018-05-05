@@ -86,6 +86,9 @@ def load_melgram(file_path):
     elif ('.npz' == extension):          # compressed npz file (preferred)
         with np.load(file_path) as data:
             melgram = data['melgram']
+            _, rows, cols, _ = data['melgram'].shape
+            n = 10
+            reduced = data['melgram'][:,:,np.arange(0,cols,n),:].T
     elif ('.png' == extension) or ('.jpeg' == extension):
         arr = imread(file_path)
         melgram = np.reshape(arr, (1,1,arr.shape[0],arr.shape[1]))  # convert 2-d image
