@@ -6,7 +6,7 @@ from keras.callbacks import Callback, ModelCheckpoint
 import tensorflow as tf
 from tensorflow.python.client import device_lib
 import numpy as np
-from panotti import models
+import models
 
 def make_serial(model, parallel=True):   # Undoes make_parallel, but keyword included in case it's called on a serial model
     if (parallel):
